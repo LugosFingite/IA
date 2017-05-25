@@ -24,4 +24,4 @@ class Prompt:
 
     # La fonction qui récupèrera notre input.
     def read(self):
-        return input(">")
+        return input("> ")
