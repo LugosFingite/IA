@@ -2,7 +2,7 @@ import random
 import time
 
 
-# Création d'une instance de la classe Random, ayant pour seed le nombre de secondes écoulée depuis... le 1er Janvier 1970 !
+# Création d'une instance de la classe Random, ayant pour seed le nombre de secondes écoulées depuis... le 1er Janvier 1970 !
 rand = random.Random(time.time())
 
 
