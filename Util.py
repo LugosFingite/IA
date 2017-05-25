@@ -3,7 +3,7 @@ import time
 
 
 # Création d'une instance de la classe Random, ayant pour seed le nombre de secondes écoulées depuis... le 1er Janvier 1970 !
-rand = random.Random(time.time())
+rand = random.Random(x = time.time())
 
 
 # Création d'une fonction prenant pour argument une ligne de texte et un caractère | un mot,
