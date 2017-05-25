@@ -11,7 +11,7 @@ class Prompt:
         if self.input == "exit":
             self.done = True
 
-    # Trois fonctions qui créent les règles à partir de fichiers .json (JavaScript Object Notation).
+    # Trois fonctions qui créent les règles.
     # A compléter plus tard.
     def loadrules(self):
         pass
