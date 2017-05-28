@@ -9,15 +9,30 @@ rand = random.Random(x = time.time())
 # Création d'une fonction prenant pour argument une ligne de texte et un caractère | un mot,
 # et renvoyant une liste contenant chaque partie de la ligne de texte qui se trouve entre deux séparateurs.
 def separate(separating : str, separator : str):
-    # Séparation | création de la liste
-    sep = separating.split(separator)
+    # Création de deux listes de caractères qui seront nos séparateurs et notre phrase à séparer.
+    separator = list(separator)
+    separating = list(separating)
+    # Création de deux autres listes vides qui nous serviront à séparer.
     separated = []
+    temp = []
 
-    # Manipulations pour insérer le séparateur entre chaque partie de la liste.
-    for s in range(len(sep) - 1):
-        separated.append(sep[s])
-        separated.append(separator)
-    separated.append(sep[-1])
+    # Pour chaque caractère on va :
+    # Vérifier si le caractère correspond à un séparateur. Si oui, si la liste temporaire contient quelque chose, on va ajouter son contenu a la phrase séparée, et on va rajouter le séparateur.
+    # Si non, on va rajouter le caractère à la liste temporaire. Bien evidemment, si on passe le contenu de la liste temporaire dans la phrase séparée, on vide la liste temporaire.
+    for char in separating:
+        for s in separator:
+            if char == s:
+                if len(temp) > 0:
+                    separated.append("".join(temp))
+                separated.append(char)
+                temp.append(char)
+                break
+
+        if len(temp) == 0 or temp[- 1] != char:
+            temp.append(char)
+        else:
+            temp.clear()
+    separated.append("".join(temp))
 
     return separated
 
