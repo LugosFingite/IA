@@ -20,6 +20,8 @@ def separate(separating : str, separator : str):
     # Vérifier si le caractère correspond à un séparateur. Si oui, si la liste temporaire contient quelque chose, on va ajouter son contenu a la phrase séparée, et on va rajouter le séparateur.
     # Si non, on va rajouter le caractère à la liste temporaire. Bien evidemment, si on passe le contenu de la liste temporaire dans la phrase séparée, on vide la liste temporaire.
     for char in separating:
+        check = 0
+
         for s in separator:
             if char == s:
                 if len(temp) > 0:
@@ -27,8 +29,10 @@ def separate(separating : str, separator : str):
                 separated.append(char)
                 temp.append(char)
                 break
+            else:
+                check += 1
 
-        if len(temp) == 0 or temp[- 1] != char:
+        if check == len(separator):
             temp.append(char)
         else:
             temp.clear()
